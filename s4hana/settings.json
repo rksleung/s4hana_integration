@@ -1,0 +1,29 @@
+{
+	"name": "s/4hana",
+	"url": "https://my300194.s4hana.ondemand.com/",
+	"authentication": { "method": "basic", "username": "", "password": "" },
+	"default_output": ["CompanyCode", "PurchaseOrder", "PurchaseOrderItem", "ActivityName", "ActivityTime", "ExpectedOrder",
+	             "Resource", "Vendor", "ItemName", "Currency", "Quantity", "ItemCost", "TotalLineValue", "IsDeleted"],
+	"apis": [
+		{
+		    "name": "purchase orders",
+			"api": "sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/A_PurchaseOrder/",
+			"filter": "$top=50",
+			"lookup_api": "to_PurchaseOrderItem",
+			"fields": {"CompanyCode": "CompanyCode",
+	           "PurchaseOrder": "PurchaseOrder",
+			   "PurchaseOrderItem": "PurchaseOrderItem",
+			   "ActivityName": "",
+			   "ActivityTime": "CreationDate",
+			   "ExpectedOrder": "",
+			   "Resource": "CreatedByUser",
+			   "Vendor": "Supplier",
+			   "ItemName": "PurchaseOrderItemText",
+			   "Currency": "DocumentCurrency",
+			   "Quantity": "OrderQuantity",
+			   "ItemCost": "NetPriceAmount",
+			   "TotalLineValue": "",
+			   "IsDeleted": ""}
+		}
+	]
+}
